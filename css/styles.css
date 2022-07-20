@@ -1,0 +1,1158 @@
+* {
+  padding: 0;
+  margin: 0;
+	text-decoration: none;
+	list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+#grid-index {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "cabecera"
+    "bienvenida"
+    "asesoria"
+    "guia"
+    "footer";
+}
+
+header {
+  grid-area: cabecera;
+  background-color: rgba(250, 250, 250, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*BARRA DE NAVEGACION*/
+nav {
+	height: 80px;
+	width: 100%;
+}
+
+.enlace {	
+	position: absolute;
+	padding: 10px 5px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+	height: 60px;
+}
+
+.enlace label {
+  font-size: 18px;
+  color: #000;
+  font-weight: 900;
+}
+
+nav ul {
+	/* float: right;
+	margin-right: 20px; */
+
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #2c3e50;
+  top: 80px;
+  left: -100%;
+  text-align: center;
+  transition: all .5s;
+}
+
+nav ul li {
+	/* display: inline-block;
+	line-height: 80px;
+	margin: 0 5px; */
+  
+  display: block;
+  margin: 50px 0;
+  line-height: 30px;
+}
+
+nav ul li a {
+	color: #fff;
+  font-size: 20px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+li a.active, li a:hover {
+  background: #aec9d7;
+  color: #2c3e50;
+  transition: .5s;
+}
+
+#check:checked ~ ul {
+  left: 0;
+}
+
+
+.checkbtn {
+  font-size: 30px;
+  float: right;
+  line-height: 80px;
+  margin-right: 20px;
+  cursor:pointer;
+
+  /* PARTA QUE NO SE VEA EL ICONO BAR */
+  /* display: none; */
+}
+
+/* PARA QUE NO SE VEA EL CHECK */
+#check {
+  display: none;
+}
+
+
+@media (min-width: 480px) {
+  
+}
+
+@media (min-width: 600px) {
+  nav ul {  
+    position: static;
+    float: right;
+    width: auto;
+    height: auto;
+    background: none;
+    top: 80px;
+    left: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 0; 
+  }
+
+  nav ul li a {
+    color: #000;
+    font-size: 10px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  .checkbtn {
+    display: none; 
+  }
+
+}
+
+@media (min-width: 768px) {
+  nav ul li a {
+    font-size: 15px;
+  }
+
+  .enlace {	
+    position: absolute;
+    padding: 5px 15px;
+  }
+  
+  .logo {
+    height: 70px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  .enlace {	
+    position: absolute;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    height: 80px;
+  }
+
+  .enlace label {
+    font-size: 20px;
+  }
+  
+}
+
+
+/* .lista-navegacion {
+  float: left;
+  margin-right: 20px;
+  width: 100%;
+}
+
+.lista-navegacion li {
+  list-style: none;
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+.lista-navegacion li:hover {
+  background: rgb(175, 205, 253);
+  transition: .5s;
+
+}
+
+.checkbtn {
+  font-size: 30px;
+  float: right;
+  line-height: 80px;
+}
+
+.lista-navegacion a {
+  text-decoration: none;
+  color: rgb(15, 15, 15);
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+} */
+
+/* @media (min-width: 768px) {
+  header nav {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+
+  .lista-navegacion {
+    gap: 2px;
+    justify-content: end;
+  }
+
+} */
+/* ///////////////////FIN BARRA DE NAVEGACION///////////////////////////// */
+
+
+
+
+
+
+
+/*FOOTER*/
+footer {
+  grid-area: footer;
+  background-color: black;
+  width: 100%;
+  color: white;
+}
+
+.redes {
+  padding: 20px;
+  text-align: center;
+
+}
+
+.redes li {
+  list-style: none;
+  display: inline;
+  margin: 20px;
+}
+
+.redes li a {
+  text-decoration: none;
+  color: white;
+}
+
+footer p {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.redes img {
+  height: 40px;
+}
+
+/* ////////////////////////FIN FOOTER//////////////////////// */
+
+
+
+
+
+
+
+/* ////////////////////////PAGINA INDEX//////////////////////// */
+/*SECCION BIENVENIDA*/
+.bienvenida {
+  grid-area: bienvenida;
+  background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/desarrolloweb.jpeg");
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.bienvenida__contenido {
+  margin: 0 20vw;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.bienvenida__titulo {
+  font-size: 22PX;
+}
+
+.bienvenida__parrafo {
+  font-size: 15px;
+}
+
+@media (min-width: 1024px) {
+  .bienvenida__titulo {
+    font-size: 30PX;
+  }
+  
+  .bienvenida__parrafo {
+    font-size: 20px;
+  }
+}
+
+
+
+
+/*SECCION ASESORIA*/
+.asesoria {
+  grid-area: asesoria;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 30px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.asesoria img {
+  width: 200px;
+  margin: 20px 0;
+}
+
+.asesoria__contenido {
+  /* margin-left: 40px; */
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+}
+
+.asesoria__contenido--titulo {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.asesoria__contenido--descripcion {
+  font-size: 15px;
+}
+
+@media (min-width: 480px) {
+  .asesoria {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 20px;
+    align-items: center;
+  }
+
+  .asesoria__contenido {
+    margin-left: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .asesoria {
+    justify-content: center;
+  }
+
+  .asesoria img {
+    width: 400px;
+    margin: 20px 0;
+  }
+
+  .asesoria__contenido--titulo {
+    font-size: 25px;
+  }
+  
+  .asesoria__contenido--descripcion {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .asesoria__contenido--titulo {
+    font-size: 30px;
+  }
+  
+  .asesoria__contenido--descripcion {
+    font-size: 20px;
+  }
+}
+
+
+
+
+/*SECCION GUIA*/
+.guia {
+  grid-area: guia;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 20px;
+  align-items: center;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 1), rgb(0, 0, 0, 0.5)), url("./../assets/images/ruta.jpg");
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.guia__encabezado--titulo {
+  color: white;
+  text-align: center;
+  font-size: 23px;
+  margin-top: 15px;
+  font-weight: 800;
+}
+
+.guia__encabezado--descripcion {
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
+
+.guia__contenidos {
+  margin: 15px;
+  justify-content: center;
+}
+
+.guia__contenido img {
+  width: 100px;
+}
+
+.guia__contenido {
+  background-color: white;
+  text-align: center;
+  margin: 7px;
+  padding: 15px;
+}
+
+.guia__contenido--titulo {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.guia__contenido--descripcion {
+  font-size: 15px;
+}
+
+@media (min-width: 480px) {
+  .guia__contenidos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .guia__encabezado--titulo {
+    margin: 10px;
+  }
+}
+
+@media (min-width: 680px) {
+  .guia__contenido {
+    width: 250px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .guia__encabezado--titulo {
+    font-size: 30px;
+  }
+  
+  .guia__encabezado--descripcion {
+    font-size: 20px;
+  }
+}
+/* ////////////////////////FIN PAGINA INDEX//////////////////////// */
+
+
+
+
+
+
+
+/* ////////////////////////PAGINA SERVICIOS//////////////////////// */
+#grid-servicios {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    "cabecera"
+    "titulo"
+    "servicios__app__web"
+    "servicios__posicionamiento"
+    "footer";
+}
+
+.servicios__encabezado {
+  grid-area: titulo;
+  margin: 20px 20px 0px 20px;
+}
+
+.titulo__uno {
+  font-family: 'Yellowtail', cursive;
+  font-size: 15px;
+}
+
+.titulo__dos {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 35px;  
+  font-weight: 800;
+}
+
+
+/*SERVICIOS APP WEB*/
+.servicios__app__web {
+  grid-area: servicios__app__web;
+  color: black;
+  background-color: rgba(128, 128, 128, 0.356);
+  margin: 60px 20px 10px 20px;
+}
+
+@media (min-width: 480px) {
+  
+}
+
+@media (min-width: 680px) {
+  .servicios__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .servicios__card--individual {
+    display: flex;
+    width: 250px;
+    margin: 10px;  
+  }
+}
+
+@media (min-width: 768px) {
+  .servicios__card--individual {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .titulo__uno {
+    font-size: 35px;
+    position: relative;
+  }
+  
+  .titulo__dos {
+    font-size: 65px;
+    position: absolute;
+    top: 115px;
+  }
+}
+
+/*SERVICIOS POSICIONAMIENTO*/
+.servicios__posicionamiento {
+  grid-area: servicios__posicionamiento;
+  color: black;
+  background-color: rgba(128, 128, 128, 0.356);
+  text-align: center;  
+  margin: 10px 20px;
+}
+
+.servicios__titulo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  margin: 10px 10px;
+}
+
+.servicios__card--individual {
+  margin: 20px;  
+  padding: 10px;
+  align-items:  center;
+  text-align: center;
+}
+
+.servicios__card--individual:hover {
+  background-color: #2f3e46;
+  color: white;
+}
+
+.card__imagen {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.card__imagen img {
+  height: auto;
+  width: 80px;
+}
+
+.card__parrafo {
+  margin: 10px 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.card__parrafo--descripcion {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+
+/* ////////////////////////FIN PAGINA SERVICIOS//////////////////////// */
+
+/* ////////////////////////PAGINA QUIENES SOMO//////////////////////// */
+/*QUIENES SOMOS*/
+
+#grid-quienessomos {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    "cabecera"
+    "quienessomos"
+    "tecnologias"
+    "ubicacion"
+    "footer";
+}
+
+.quienessomos {
+  grid-area: quienessomos;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 20px 10px;
+}
+
+.quienessomos__contenido {
+  text-align: center;  
+  font-family: 'Open Sans', sans-serif;
+}
+
+.quienessomos__contenido h1 {
+  font-weight: 800;
+  font-size: 23px;
+}
+
+.quienessomos__contenido p {
+  font-size: 15px;
+}
+
+.quienessomos__imagen {
+  text-align: center;
+}
+
+.quienessomos__imagen img {
+  width: 80vw;
+}
+
+@media (min-width: 480px) {
+  .quienessomos {
+    flex-direction: row;
+    margin: 20px 10px;
+    align-items: center;
+  }
+
+  .quienessomos__imagen img {
+    width: 210px;
+  }
+}
+
+@media (min-width: 600px) {
+  
+}
+
+@media (min-width: 768px) {
+  .quienessomos__imagen img {
+    width: 350px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .quienessomos__imagen img {
+    width: 450px;
+  }
+
+  .quienessomos__contenido {
+    padding: 30px;
+  }
+
+  .quienessomos__contenido h1 {
+    font-weight: 800;
+    font-size: 30px;
+  }
+  
+  .quienessomos__contenido p {
+    font-size: 23px;
+  }
+
+  
+  
+}
+
+
+
+/* SECCION TECNOLOGIAS*/
+.tecnologias {
+  grid-area: tecnologias;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-align: center;  
+  background-color: rgb(179, 179, 179);
+  margin: 20px 10px;
+}
+
+.tecnologias p {
+  margin-bottom: 20px;
+  margin: 15px 0;
+}
+
+.tecnologias__galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.tecnologias img {
+  margin: 15px 10px 5px 10px;
+  width: 120px;
+}
+
+.galeria__imagen:hover {
+  background-color: white;
+}
+
+@media (min-width: 480px) {
+  
+}
+
+@media (min-width: 600px) {
+  
+}
+
+@media (min-width: 768px) {
+  
+}
+
+@media (min-width: 1024px) {
+  
+}
+
+
+
+/* SECCION UBICACION*/
+.ubicacion {
+  grid-area: ubicacion;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  background-color: rgb(39, 61, 51);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+}
+
+.ubicacion__contenido {
+  margin: 20px;
+  
+}
+
+.ubicacion__contenido--titulo {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.ubicacion__contenido--direccion {
+  font-size: 12px;
+}
+
+.ubicacion__contenido--vermapa {
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.ubicacion__contenido--vermapa a{
+  border: white solid 1px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.ubicacion__mapa {
+  width: 100%;
+  text-align: left;
+}
+
+.ubicacion__mapa img {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 480px) {
+  .ubicacion__contenido--titulo {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  
+  .ubicacion__contenido--direccion {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 600px) {
+  .ubicacion {
+    flex-direction: row;
+  }
+
+  .ubicacion__contenido {
+    margin: 10px;
+    width: 60%;
+  }
+
+  .ubicacion__contenido--titulo {
+    font-size: 25px;
+    margin-bottom: 8px;
+  }
+  
+  .ubicacion__contenido--direccion {
+    font-size: 12px;
+  }
+
+  .ubicacion__mapa img {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 768px) {
+  
+}
+
+@media (min-width: 1024px) {
+
+  .ubicacion__contenido--titulo {
+    font-size: 40px;
+  }
+  
+  .ubicacion__contenido--direccion {
+    font-size: 15px;
+  }
+
+  .ubicacion__contenido--vermapa {
+    font-size: 18px;
+  }
+  
+}
+
+
+/* ////////////////////////FIN PAGINA QUIENES SOMO//////////////////////// */
+
+
+
+
+
+
+/* ////////////////////////PAGINA DUDAS//////////////////////// */
+/*DUDAS*/
+
+#grid-dudas {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "cabecera"
+    "imagen__dudas"
+    "dudas"
+    "footer";
+    font-family: 'Open Sans', sans-serif;
+}
+
+.imagen__dudas {
+  grid-area: imagen__dudas;
+  align-self: center;
+}
+
+.imagen__dudas img {
+  width: 100%;
+}
+
+.dudas {
+  grid-area: dudas;
+}
+
+.dudas__cabecera {
+  margin: 20px;
+  font-weight: 800;
+}
+
+details {
+  background-color: #f2f2f2;
+  padding: .5rem;
+  border-radius: 6px;
+  margin: .5rem;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+}
+
+summary {
+  list-style: none;
+  font-weight: 800;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+summary::before {
+  content: '+';
+  padding-right: 1rem;
+}
+
+details[open] summary::before {
+  content: '-';
+
+}
+
+
+
+@media (min-width: 480px) {
+  .imagen__dudas {
+    text-align: center;
+  }
+
+  .imagen__dudas img {
+    width: 50%;
+  }
+}
+
+@media (min-width: 600px) {
+  
+}
+
+@media (min-width: 768px) {
+  #grid-dudas {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "cabecera cabecera"
+      "imagen__dudas dudas"
+      "footer footer";
+  }
+
+  .imagen__dudas img {
+    width: 100%;
+  }
+
+  .preguntas {
+    width: 500px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .preguntas {
+    width: 700px;
+  }
+  
+}
+
+/* ////////////////////////FIN PAGINA DUDAS//////////////////////// */
+
+
+
+
+/* ////////////////////////PAGINA CONTACTO//////////////////////// */
+/*CONTACTO*/
+#grid-contacto {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "cabecera"
+    "contenido"
+    "footer";
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  background-color: white;
+  
+}
+
+.contenido{
+  color: white;
+  grid-area: contenido;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding: 1.5em; */
+  /* padding: 5px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  text-align: center;
+  font-size: 2em;
+}
+
+.contenido__titulo {
+  color: #000;
+  padding: 15px 20px 0 20px;
+  
+}
+
+.logo span {
+  color: #b70e21;
+}
+
+.contacto {
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.6);
+  width: 250px;
+  margin: 35px 15px;
+} 
+
+.contacto > * {
+  padding: 1em;
+}
+
+.form_contacto {
+  background-color: #222222;
+  
+}
+
+.form_contacto form {
+  display: flex;
+  flex-direction: column;
+} 
+
+.form_contacto form p {
+  margin: 0;
+  padding: 1em;
+}
+
+.form_contacto form button,
+.form_contacto form input,
+.form_contacto form textarea {
+  width: 100%;
+  padding: .7em;
+  border: none;
+  background: none;
+  outline: 0;
+  color: #fff;
+  border-bottom: 1px solid #d63031;
+}
+
+.form_contacto form button {
+  background: #b70e21;
+  color: #000;
+  border: 0;
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+.form_contacto form button:hover,
+.form_contacto form button:focus {
+  background: #d63031;
+  color: #fff;
+  transition: background-color 1s ease-out;
+  outline: 0;
+}
+
+
+.informacion__contacto {
+  background-color: #000000;
+  font-size: 15px;
+}
+
+.informacion__contacto h4,
+.informacion__contacto ul ,
+.informacion__contacto p  {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.informacion__contacto ul {
+  list-style: none;
+  padding: 0;
+}
+
+.informacion__contacto  ul li {
+  padding: .3em;
+} 
+
+
+@media (min-width: 480px) {
+  .contacto {
+    width: 350px;
+  } 
+}
+
+@media (min-width: 600px) {
+  .contacto {
+    width: 550px;
+  }
+
+  .form_contacto form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form_contacto form .block{
+    grid-column: 1 / 3;
+  } 
+}
+
+@media (min-width: 768px) {
+  .contacto {
+    width: 700px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  #grid-contacto {
+    font-size: 18px;
+  }
+
+  .informacion__contacto {
+    font-size: 15px;
+  }
+
+  .informacion__contacto h4,
+  .informacion__contacto ul,
+  .informacion__contacto li,
+  .informacion__contacto p {
+    padding: 1em;
+    text-align: left;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .contacto {
+    width: 900px;
+  }
+
+  .contacto{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }  
+  
+}
+
+
