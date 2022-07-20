@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <script src="https://kit.fontawesome.com/bb88356892.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./../css/styles.css">
   <link
@@ -13,6 +13,9 @@
     rel="stylesheet">
   <link rel="icon" href="./../assets/icons/logo.png">
   <script src="https://kit.fontawesome.com/bb88356892.js" crossorigin="anonymous"></script>
+
+  <!-- ANIMATE -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
@@ -26,13 +29,13 @@
     <header>
       <nav>
         <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
         <a href="" class="enlace">
           <img class="logo" src="./../assets/icons/logo.png" alt="Logo">
         </a>
-        
+
         <ul class="lista-navegacion">
           <li><a href="./../index.html">Inicio</a> </li>
           <li><a href="./servicios.html">Servicios</a> </li>
@@ -50,7 +53,7 @@
       </div>
 
 
-      <div class="contacto">
+      <div class="contacto wow animate__animated animate__rotateIn">
         <div class="form_contacto">
           <h3>Contactanos</h3>
           <form action="">
@@ -95,13 +98,7 @@
           <p>DevSite OGAR</p>
         </div>
       </div>
-
-
     </section>
-
-
-
-
 
     <footer>
       <ul class="redes">
@@ -118,6 +115,10 @@
     </footer>
   </div>
 
+  <script src="../css/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
 </body>
 
 </html>

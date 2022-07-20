@@ -185,52 +185,6 @@ li a.active, li a:hover {
   
 }
 
-
-/* .lista-navegacion {
-  float: left;
-  margin-right: 20px;
-  width: 100%;
-}
-
-.lista-navegacion li {
-  list-style: none;
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
-}
-
-.lista-navegacion li:hover {
-  background: rgb(175, 205, 253);
-  transition: .5s;
-
-}
-
-.checkbtn {
-  font-size: 30px;
-  float: right;
-  line-height: 80px;
-}
-
-.lista-navegacion a {
-  text-decoration: none;
-  color: rgb(15, 15, 15);
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-} */
-
-/* @media (min-width: 768px) {
-  header nav {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-  }
-
-  .lista-navegacion {
-    gap: 2px;
-    justify-content: end;
-  }
-
-} */
 /* ///////////////////FIN BARRA DE NAVEGACION///////////////////////////// */
 
 
