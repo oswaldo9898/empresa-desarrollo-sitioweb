@@ -8,7 +8,11 @@
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- FONTAWESOME -->
   <script src="https://kit.fontawesome.com/bb88356892.js" crossorigin="anonymous"></script>
+  <!-- ANIMATE -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;800&display=swap" rel="stylesheet">
   <link rel="icon" href="./assets/icons/logo.png">
@@ -22,14 +26,14 @@
     <header>
       <nav>
         <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
         <a href="" class="enlace">
           <img class="logo" src="./assets/icons/logo.png" alt="Logo">
           <label for="">DevSite OGAR</label>
         </a>
-        
+
         <ul class="lista-navegacion">
           <li><a class="active" href="index.html">Inicio</a> </li>
           <li><a href="./pages/servicios.html">Servicios</a> </li>
@@ -44,7 +48,7 @@
 
     <!--INICIO SECCION BIENVENIDA-->
     <section class="bienvenida">
-      <div class="bienvenida__contenido">
+      <div class="bienvenida__contenido wow animate__animated animate__zoomInUp">
         <h1 class="bienvenida__titulo">¿Deseas expandir tu negocio?</h1>
         <p class="bienvenida__parrafo">Ten tu propio sitio web donde tus potenciales clientes podran observar los
           productos
@@ -55,7 +59,7 @@
     <!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!--INICIO SECCION ASESORIA-->
-    <section class="asesoria">
+    <section class="asesoria wow animate__animated animate__fadeInUp">
       <div class="asesoria__imagen">
         <img src="./assets/images/cliente.jpg" alt="Foto de cliente">
       </div>
@@ -69,23 +73,26 @@
 
     <!--INICIO SECCION GUIA-->
     <section class="guia">
-        <p class="guia__encabezado--titulo">Te podemos guiar en varios aspectos</p>
-        <p class="guia__encabezado--descripcion">Te mostraremos las claves para conseguir más clientes</p>
+      <p class="guia__encabezado--titulo">Te podemos guiar en varios aspectos</p>
+      <p class="guia__encabezado--descripcion">Te mostraremos las claves para conseguir más clientes</p>
       <div class="guia__contenidos">
         <div class="guia__contenido">
           <img src="./assets/icons/red-mundial.png" alt="imagen pagina web">
           <p class="guia__contenido--titulo">¿NO TIENES PÁGINA WEB?</p>
-          <p class="guia__contenido--descripcion">Sabías que 7 de cada 10 personas consumen medios digitales. ¡Por supuesto que debes tener!</p>
+          <p class="guia__contenido--descripcion">Sabías que 7 de cada 10 personas consumen medios digitales. ¡Por
+            supuesto que debes tener!</p>
         </div>
         <div class="guia__contenido">
           <img src="./assets/icons/medios-de-comunicacion-social.png" alt="imagen redes sociales">
           <p class="guia__contenido--titulo">¿TÚ PAGINA NO ES LA PRIMERA OPCIÓN EN LOS BUSCADORES WEB?</p>
-          <p class="guia__contenido--descripcion">Cuanto mejor posicionada esté una página web en los buscadores, mayores son las probabilidades de obtener visitas.</p>
+          <p class="guia__contenido--descripcion">Cuanto mejor posicionada esté una página web en los buscadores,
+            mayores son las probabilidades de obtener visitas.</p>
         </div>
         <div class="guia__contenido">
           <img src="./assets/icons/love.png" alt="imagen like">
           <p class="guia__contenido--titulo">¡ME FUNCIONA Y QUIERO MÁS!</p>
-          <p class="guia__contenido--descripcion">Todos tus proyectos pueden ser escalables mediante la continua optimización.</p>
+          <p class="guia__contenido--descripcion">Todos tus proyectos pueden ser escalables mediante la continua
+            optimización.</p>
         </div>
       </div>
     </section>
@@ -110,6 +117,11 @@
     <!--FIN FOOTER-->
     <!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
   </div>
+
+  <script src="css/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
 </body>
 
 </html>
