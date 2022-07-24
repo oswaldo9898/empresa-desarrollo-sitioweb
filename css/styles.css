@@ -68,10 +68,6 @@ footer {
 
 
 
-
-
-
-
 /* ////////////////////////PAGINA INDEX//////////////////////// */
 /*SECCION BIENVENIDA*/
 .bienvenida {
@@ -111,14 +107,12 @@ footer {
 }
 
 
-
-
 /*SECCION ASESORIA*/
 .asesoria {
   grid-area: asesoria;
   display: flex;
   flex-direction: column-reverse;
-  margin: 30px 20px;
+   
   align-items: center;
   justify-content: center;
 }
@@ -203,8 +197,6 @@ footer {
 }
 
 
-
-
 /*SECCION GUIA*/
 .guia {
   grid-area: guia;
@@ -259,6 +251,7 @@ footer {
 /* ////////////////////////PAGINA SERVICIOS//////////////////////// */
 #grid-servicios {
   display: grid;
+  font-family: 'Open Sans', sans-serif;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto auto;
   grid-template-areas:
@@ -271,18 +264,22 @@ footer {
 
 .servicios__encabezado {
   grid-area: titulo;
-  margin: 20px 20px 0px 20px;
+  background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/nuestros-servicios-fondo.jpg");
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.titulo__uno {
-  font-family: 'Yellowtail', cursive;
-  font-size: 15px;
+.card-border-servicio {
+  border: solid 10px #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all ease-out 0.2s;
 }
 
-.titulo__dos {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 35px;  
-  font-weight: 800;
+.card-border-servicio:hover {
+  transform: scale(1.05);
 }
 
 
@@ -290,103 +287,21 @@ footer {
 #servicios__app__web {
   grid-area: servicios__app__web;
   color: black;
-  background-color: rgba(128, 128, 128, 0.356);
-  margin: 60px 20px 10px 20px;
-}
-
-@media (min-width: 480px) {
-  
-}
-
-@media (min-width: 680px) {
-  .servicios__cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .servicios__card--individual {
-    display: flex;
-    width: 250px;
-    margin: 10px;  
-  }
-}
-
-@media (min-width: 768px) {
-  .servicios__card--individual {
-    width: 300px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .titulo__uno {
-    font-size: 35px;
-    position: relative;
-  }
-  
-  .titulo__dos {
-    font-size: 65px;
-    position: absolute;
-    top: 115px;
-  }
-}
-
-/*SERVICIOS POSICIONAMIENTO*/
-.servicios__posicionamiento {
-  grid-area: servicios__posicionamiento;
-  color: black;
-  background-color: rgba(128, 128, 128, 0.356);
-  text-align: center;  
-  margin: 10px 20px;
-}
-
-.servicios__titulo {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  text-align: center;
   margin: 10px 10px;
 }
 
-.servicios__card--individual {
-  margin: 20px;  
-  padding: 10px;
-  align-items:  center;
-  text-align: center;
+/*SERVICIOS POSICIONAMIENTO*/
+#servicios__posicionamiento {
+  grid-area: servicios__posicionamiento;
+  color: black;
+  margin: 10px 10px;
 }
-
-.servicios__card--individual:hover {
-  background-color: #2f3e46;
-  color: white;
-}
-
-.card__imagen {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.card__imagen img {
-  height: auto;
-  width: 80px;
-}
-
-.card__parrafo {
-  margin: 10px 5px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-}
-
-.card__parrafo--descripcion {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-}
-
 
 /* ////////////////////////FIN PAGINA SERVICIOS//////////////////////// */
 
+
 /* ////////////////////////PAGINA QUIENES SOMO//////////////////////// */
 /*QUIENES SOMOS*/
-
 #grid-quienessomos {
   display: grid;
   grid-template-columns: 1fr;
