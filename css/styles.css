@@ -112,7 +112,7 @@ footer {
   grid-area: asesoria;
   display: flex;
   flex-direction: column-reverse;
-   
+  margin: 30px 20px;
   align-items: center;
   justify-content: center;
 }
@@ -287,14 +287,14 @@ footer {
 #servicios__app__web {
   grid-area: servicios__app__web;
   color: black;
-  margin: 10px 10px;
+  margin: 0px 20px 10px 0px;
 }
 
 /*SERVICIOS POSICIONAMIENTO*/
 #servicios__posicionamiento {
   grid-area: servicios__posicionamiento;
   color: black;
-  margin: 10px 10px;
+  margin: 10px 20px 10px 20px;
 }
 
 /* ////////////////////////FIN PAGINA SERVICIOS//////////////////////// */
