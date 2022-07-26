@@ -1,8 +1,8 @@
 * {
   padding: 0;
   margin: 0;
-	text-decoration: none;
-	list-style: none;
+  text-decoration: none;
+  list-style: none;
   box-sizing: border-box;
 }
 
@@ -27,7 +27,7 @@ header {
   background-color: rgba(250, 250, 250, 0.8);
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 100;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -40,7 +40,7 @@ span {
 }
 
 .logo {
-	height: 60px;
+  height: 60px;
 }
 
 .navbar-expand-lg .navbar-collapse {
@@ -62,8 +62,9 @@ span {
 /*FOOTER*/
 footer {
   grid-area: footer;
-  
+
 }
+
 /* ////////////////////////FIN FOOTER//////////////////////// */
 
 
@@ -100,7 +101,7 @@ footer {
   .bienvenida__titulo {
     font-size: 30PX;
   }
-  
+
   .bienvenida__parrafo {
     font-size: 20px;
   }
@@ -112,7 +113,11 @@ footer {
   grid-area: asesoria;
   display: flex;
   flex-direction: column-reverse;
+<<<<<<< HEAD
   margin: 30px 20px;
+=======
+
+>>>>>>> agregando_bootstrap
   align-items: center;
   justify-content: center;
 }
@@ -172,7 +177,7 @@ footer {
   .asesoria__contenido--titulo {
     font-size: 30px;
   }
-  
+
   .asesoria__contenido--descripcion {
     font-size: 18px;
   }
@@ -186,7 +191,7 @@ footer {
   .asesoria__contenido--titulo {
     font-size: 45px;
   }
-  
+
   .asesoria__contenido--descripcion {
     font-size: 20px;
   }
@@ -240,9 +245,8 @@ footer {
 .card__guia {
   height: 300px;
 }
+
 /* ////////////////////////FIN PAGINA INDEX//////////////////////// */
-
-
 
 
 /* ////////////////////////PAGINA SERVICIOS//////////////////////// */
@@ -272,11 +276,13 @@ footer {
   border: solid 10px #fff;
   border-radius: 20px;
   overflow: hidden;
-  transition: all ease-out 0.2s;
+  transition: all ease-out 0.3s;
 }
 
 .card-border-servicio:hover {
   transform: scale(1.05);
+  background-color: rgba(10, 8, 74, 0.645);
+  color: #fff;
 }
 
 
@@ -310,7 +316,7 @@ footer {
   .titulo__texto-servicio {
     font-size: 35px;
   }
-} 
+}
 
 @media (min-width: 768px) {
   .titulo__texto-servicio {
@@ -323,6 +329,7 @@ footer {
     font-size: 50px;
   }
 }
+
 /* ////////////////////////FIN PAGINA SERVICIOS//////////////////////// */
 
 
@@ -334,10 +341,26 @@ footer {
   grid-template-rows: auto auto auto auto auto;
   grid-template-areas:
     "cabecera"
+    "titulo"
     "quienessomos"
     "tecnologias"
+    "porque_elegirnos"
     "ubicacion"
     "footer";
+}
+
+.nosotros__encabezado {
+  grid-area: titulo;
+  background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/nosotros.jpg");
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Servicios__encabezado-titulo {
+  font-weight: 700;
+  color: rgba(255, 255, 255, .7) !important;
 }
 
 .quienessomos {
@@ -348,7 +371,7 @@ footer {
 }
 
 .quienessomos__contenido {
-  text-align: center;  
+  text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -381,9 +404,7 @@ footer {
   }
 }
 
-@media (min-width: 600px) {
-  
-}
+@media (min-width: 600px) {}
 
 @media (min-width: 768px) {
   .quienessomos__imagen img {
@@ -393,6 +414,11 @@ footer {
 }
 
 @media (min-width: 1024px) {
+
+  .quienessomos {
+    margin: 20px 40px;
+  }
+
   .quienessomos__imagen img {
     width: 450px;
   }
@@ -405,13 +431,10 @@ footer {
     font-weight: 800;
     font-size: 30px;
   }
-  
+
   .quienessomos__contenido p {
     font-size: 23px;
   }
-
-  
-  
 }
 
 
@@ -421,47 +444,78 @@ footer {
   grid-area: tecnologias;
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
-  text-align: center;  
-  background-color: rgb(179, 179, 179);
-  margin: 20px 10px;
+  text-align: center;
+  background-color: rgba(179, 179, 179, 0.35);
+  margin: 20px 0;
 }
 
-.tecnologias p {
-  margin-bottom: 20px;
-  margin: 15px 0;
+.tecnologia__nombre {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 12px;
 }
 
-.tecnologias__galeria {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  justify-content: center;
-  margin: 10px;
+.imagen__tecnologia {
+  cursor: pointer;
+  transition: all ease-out0.2s;
 }
 
-.tecnologias img {
-  margin: 15px 10px 5px 10px;
-  width: 120px;
-}
-
-.galeria__imagen:hover {
-  background-color: white;
+.imagen__tecnologia:hover {
+  transform: scale(1.1);
 }
 
 @media (min-width: 480px) {
-  
+  .tecnologia__nombre {
+    font-size: 15px;
+  }
 }
 
 @media (min-width: 600px) {
-  
+  .tecnologia__nombre {
+    font-size: 17px;
+  }
 }
 
-@media (min-width: 768px) {
-  
-}
+@media (min-width: 768px) {}
 
 @media (min-width: 1024px) {
-  
+  .tecnologia__nombre {
+    font-size: 20px;
+  }
+}
+
+/* SECCION PORQUE ELEGIRNOS*/
+.porque__elegirnos {
+  grid-area: porque_elegirnos;
+}
+
+.text-card h5,
+.text-card p {
+  font-size: 15px;
+}
+
+
+@media (min-width: 480px) {
+
+  .text-card h5,
+  .text-card p {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 600px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 1024px) {
+  .text-card h5,
+  .text-card p {
+    font-size: 23px;
+  }
 }
 
 
@@ -482,7 +536,7 @@ footer {
 
 .ubicacion__contenido {
   margin: 20px;
-  
+
 }
 
 .ubicacion__contenido--titulo {
@@ -499,7 +553,7 @@ footer {
   font-size: 15px;
 }
 
-.ubicacion__contenido--vermapa a{
+.ubicacion__contenido--vermapa a {
   border: white solid 1px;
   padding: 5px;
   text-decoration: none;
@@ -522,7 +576,7 @@ footer {
     font-size: 28px;
     margin-bottom: 8px;
   }
-  
+
   .ubicacion__contenido--direccion {
     font-size: 15px;
   }
@@ -542,7 +596,7 @@ footer {
     font-size: 25px;
     margin-bottom: 8px;
   }
-  
+
   .ubicacion__contenido--direccion {
     font-size: 12px;
   }
@@ -552,16 +606,14 @@ footer {
   }
 }
 
-@media (min-width: 768px) {
-  
-}
+@media (min-width: 768px) {}
 
 @media (min-width: 1024px) {
 
   .ubicacion__contenido--titulo {
     font-size: 40px;
   }
-  
+
   .ubicacion__contenido--direccion {
     font-size: 15px;
   }
@@ -569,77 +621,38 @@ footer {
   .ubicacion__contenido--vermapa {
     font-size: 18px;
   }
-  
-}
 
+}
 
 /* ////////////////////////FIN PAGINA QUIENES SOMO//////////////////////// */
 
 
-
-
-
-
-/* ////////////////////////PAGINA DUDAS//////////////////////// */
-/*DUDAS*/
-
+/* ////////////////////////PAGINA PREGUNTAS//////////////////////// */
+/*PREGUNTAS*/
 #grid-dudas {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto;
   grid-template-areas:
     "cabecera"
-    "imagen__dudas"
+    "titulo"
     "dudas"
     "footer";
-    font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.imagen__dudas {
-  grid-area: imagen__dudas;
-  align-self: center;
-}
-
-.imagen__dudas img {
-  width: 100%;
+.dudas__encabezado {
+  grid-area: titulo;
+  background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/dudas-cabecera.jpg");
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .dudas {
   grid-area: dudas;
 }
-
-.dudas__cabecera {
-  margin: 20px;
-  font-weight: 800;
-}
-
-details {
-  background-color: #f2f2f2;
-  padding: .5rem;
-  border-radius: 6px;
-  margin: .5rem;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-}
-
-summary {
-  list-style: none;
-  font-weight: 800;
-  font-size: 17px;
-  margin-bottom: 10px;
-}
-
-summary::before {
-  content: '+';
-  padding-right: 1rem;
-}
-
-details[open] summary::before {
-  content: '-';
-
-}
-
-
 
 @media (min-width: 480px) {
   .imagen__dudas {
@@ -651,19 +664,9 @@ details[open] summary::before {
   }
 }
 
-@media (min-width: 600px) {
-  
-}
+@media (min-width: 600px) {}
 
 @media (min-width: 768px) {
-  #grid-dudas {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "cabecera cabecera"
-      "imagen__dudas dudas"
-      "footer footer";
-  }
 
   .imagen__dudas img {
     width: 100%;
@@ -680,12 +683,10 @@ details[open] summary::before {
   .preguntas {
     width: 700px;
   }
-  
+
 }
 
-/* ////////////////////////FIN PAGINA DUDAS//////////////////////// */
-
-
+/* ////////////////////////FIN PAGINA PREGUNTAS//////////////////////// */
 
 
 /* ////////////////////////PAGINA CONTACTO//////////////////////// */
@@ -696,25 +697,36 @@ details[open] summary::before {
   grid-template-rows: auto auto auto;
   grid-template-areas:
     "cabecera"
+    "titulo"
     "contenido"
     "footer";
-  font-family: 'Quicksand', sans-serif;
-  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
   background-color: white;
-  
+
 }
 
-.contenido{
-  color: white;
+.contacto__encabezado {
+  grid-area: titulo;
+  background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/contacto.jpg");
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contacto__encabezado-titulo {
+  font-weight: 700;
+  color: rgba(255, 255, 255, .7) !important;
+}
+
+.contenido {
   grid-area: contenido;
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
-  /* padding: 1.5em; */
-  /* padding: 5px; */
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  font-size: 13px;
 }
 
 .logo {
@@ -725,145 +737,42 @@ details[open] summary::before {
 .contenido__titulo {
   color: #000;
   padding: 15px 20px 0 20px;
-  
+
 }
 
 .logo span {
-  color: #b70e21;
+  color: #110eb7;
+  font-weight: 900;
+  font-size: 20px;
 }
 
 .contacto {
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.6);
-  width: 250px;
   margin: 35px 15px;
-} 
-
-.contacto > * {
-  padding: 1em;
-}
-
-.form_contacto {
-  background-color: #222222;
-  
-}
-
-.form_contacto form {
-  display: flex;
-  flex-direction: column;
-} 
-
-.form_contacto form p {
-  margin: 0;
-  padding: 1em;
-}
-
-.form_contacto form button,
-.form_contacto form input,
-.form_contacto form textarea {
-  width: 100%;
-  padding: .7em;
-  border: none;
-  background: none;
-  outline: 0;
+  background-color: #161212a5;
   color: #fff;
-  border-bottom: 1px solid #d63031;
 }
-
-.form_contacto form button {
-  background: #b70e21;
-  color: #000;
-  border: 0;
-  text-transform: uppercase;
-  padding: 1em;
-}
-
-.form_contacto form button:hover,
-.form_contacto form button:focus {
-  background: #d63031;
-  color: #fff;
-  transition: background-color 1s ease-out;
-  outline: 0;
-}
-
-
-.informacion__contacto {
-  background-color: #000000;
-  font-size: 15px;
-}
-
-.informacion__contacto h4,
-.informacion__contacto ul ,
-.informacion__contacto p  {
-  text-align: center;
-  margin: 0 0 1rem 0;
-}
-
-.informacion__contacto ul {
-  list-style: none;
-  padding: 0;
-}
-
-.informacion__contacto  ul li {
-  padding: .3em;
-} 
-
 
 @media (min-width: 480px) {
-  .contacto {
-    width: 350px;
-  } 
-}
-
-@media (min-width: 600px) {
-  .contacto {
-    width: 550px;
-  }
-
-  .form_contacto form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .form_contacto form .block{
-    grid-column: 1 / 3;
-  } 
-}
-
-@media (min-width: 768px) {
-  .contacto {
-    width: 700px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-  }
-
-  #grid-contacto {
-    font-size: 18px;
-  }
-
-  .informacion__contacto {
+  .contenido {
     font-size: 15px;
   }
 
-  .informacion__contacto h4,
-  .informacion__contacto ul,
-  .informacion__contacto li,
-  .informacion__contacto p {
-    padding: 1em;
-    text-align: left;
+  .logo span {
+    font-size: 23px;
   }
-
 }
 
-@media (min-width: 1024px) {
-  .contacto {
-    width: 900px;
+@media (min-width: 600px) {
+  .contenido {
+    font-size: 18px;
   }
 
-  .contacto{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-  }  
-  
+  .logo span {
+    font-size: 28px;
+  }
 }
 
+@media (min-width: 768px) {}
 
+@media (min-width: 1024px) {}
