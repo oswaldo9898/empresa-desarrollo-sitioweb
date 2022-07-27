@@ -113,11 +113,7 @@ footer {
   grid-area: asesoria;
   display: flex;
   flex-direction: column-reverse;
-<<<<<<< HEAD
   margin: 30px 20px;
-=======
-
->>>>>>> agregando_bootstrap
   align-items: center;
   justify-content: center;
 }
