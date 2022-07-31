@@ -1,0 +1,256 @@
+/*QUIENES SOMOS*/
+#grid-quienessomos {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    "cabecera"
+    "titulo"
+    "quienessomos"
+    "tecnologias"
+    "porque_elegirnos"
+    "ubicacion"
+    "footer";
+}
+
+.nosotros__encabezado {
+  grid-area: titulo;
+  background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/nosotros.jpg");
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Servicios__encabezado-titulo {
+  font-weight: 700;
+  color: rgba(255, 255, 255, .7) !important;
+}
+
+.quienessomos {
+  grid-area: quienessomos;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 20px 10px;
+}
+
+.quienessomos__contenido {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.quienessomos__contenido h1 {
+  font-weight: 800;
+  font-size: 23px;
+}
+
+.quienessomos__contenido p {
+  font-size: 15px;
+}
+
+.quienessomos__imagen {
+  text-align: center;
+}
+
+.quienessomos__imagen img {
+  width: 80vw;
+}
+
+/* SECCION TECNOLOGIAS*/
+.tecnologias {
+  grid-area: tecnologias;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  background-color: rgba(179, 179, 179, 0.35);
+  margin: 20px 0;
+}
+
+.tecnologia__nombre {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.imagen__tecnologia {
+  cursor: pointer;
+  transition: all ease-out 0.2s;
+}
+
+.imagen__tecnologia:hover {
+  transform: scale(1.1);
+}
+
+/* SECCION PORQUE ELEGIRNOS*/
+.porque__elegirnos {
+  grid-area: porque_elegirnos;
+}
+
+.text-card h5,
+.text-card p {
+  font-size: 15px;
+}
+
+/* SECCION UBICACION*/
+.ubicacion {
+  grid-area: ubicacion;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  background-color: rgb(39, 61, 51);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+}
+
+.ubicacion__contenido {
+  margin: 20px;
+
+}
+
+.ubicacion__contenido--titulo {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.ubicacion__contenido--direccion {
+  font-size: 12px;
+}
+
+.ubicacion__contenido--vermapa {
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.ubicacion__contenido--vermapa a {
+  border: white solid 1px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.ubicacion__mapa {
+  width: 100%;
+  text-align: left;
+}
+
+.ubicacion__mapa img {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/*MEDIA QUERY*/
+@media (min-width: 480px) {
+  .quienessomos {
+    flex-direction: row;
+    margin: 20px 10px;
+    align-items: center;
+  }
+
+  .tecnologia__nombre {
+    font-size: 15px;
+  }
+
+  .quienessomos__imagen img {
+    width: 210px;
+  }
+
+  .text-card h5,
+  .text-card p {
+    font-size: 17px;
+  }
+
+  .ubicacion__contenido--titulo {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .ubicacion__contenido--direccion {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 600px) {
+  .tecnologia__nombre {
+    font-size: 17px;
+  }
+
+  .ubicacion {
+    flex-direction: row;
+  }
+
+  .ubicacion__contenido {
+    margin: 10px;
+    width: 60%;
+  }
+
+  .ubicacion__contenido--titulo {
+    font-size: 25px;
+    margin-bottom: 8px;
+  }
+
+  .ubicacion__contenido--direccion {
+    font-size: 12px;
+  }
+
+  .ubicacion__mapa img {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .quienessomos__imagen img {
+    width: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .quienessomos {
+    margin: 20px 40px;
+  }
+
+  .quienessomos__imagen img {
+    width: 450px;
+  }
+
+  .quienessomos__contenido {
+    padding: 30px;
+  }
+
+  .quienessomos__contenido h1 {
+    font-weight: 800;
+    font-size: 30px;
+  }
+
+  .quienessomos__contenido p {
+    font-size: 23px;
+  }
+
+  .tecnologia__nombre {
+    font-size: 20px;
+  }
+
+  .text-card h5,
+  .text-card p {
+    font-size: 23px;
+  }
+
+  .ubicacion__contenido--titulo {
+    font-size: 40px;
+  }
+
+  .ubicacion__contenido--direccion {
+    font-size: 15px;
+  }
+
+  .ubicacion__contenido--vermapa {
+    font-size: 18px;
+  }
+}
