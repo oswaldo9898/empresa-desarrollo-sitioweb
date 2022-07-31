@@ -1,0 +1,55 @@
+/*PREGUNTAS*/
+#grid-dudas {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "cabecera"
+    "titulo"
+    "dudas"
+    "footer";
+  font-family: 'Open Sans', sans-serif;
+}
+
+.dudas__encabezado {
+  grid-area: titulo;
+  background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/dudas-cabecera.jpg");
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dudas {
+  grid-area: dudas;
+}
+
+/*MEDIA QUERY*/
+@media (min-width: 480px) {
+  .imagen__dudas {
+    text-align: center;
+  }
+
+  .imagen__dudas img {
+    width: 50%;
+  }
+}
+
+@media (min-width: 600px) {}
+
+@media (min-width: 768px) {
+  .imagen__dudas img {
+    width: 100%;
+  }
+
+  .preguntas {
+    width: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .preguntas {
+    width: 700px;
+  }
+}
