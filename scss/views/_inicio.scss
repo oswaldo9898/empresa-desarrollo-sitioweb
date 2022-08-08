@@ -1,3 +1,9 @@
+@import './../utilities/variables';
+@import './../utilities/map';
+@import './../components/button';
+@import './../components/card';
+@import './../utilities/mixins';
+
 #grid-index {
   display: grid;
   grid-template-columns: 1fr;
@@ -14,14 +20,10 @@
 .bienvenida {
   grid-area: bienvenida;
   background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/desarrolloweb.jpeg");
-  min-height: 50vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
+  @include backgroud-imagen(50vh, cover, center);
+  @include caja-flex(none, center, none);
   color: white;
-  text-align: center;
+  text-align: map-get($estilos, alineacion);
 }
 
 .bienvenida__contenido {
@@ -40,11 +42,8 @@
 /*SECCION ASESORIA*/
 .asesoria {
   grid-area: asesoria;
-  display: flex;
-  flex-direction: column-reverse;
+  @include caja-flex(column-reverse, center, center);
   margin: 30px 20px;
-  align-items: center;
-  justify-content: center;
 }
 
 .asesoria img {
@@ -54,29 +53,30 @@
 
 .asesoria__contenido {
   font-family: 'Open Sans', sans-serif;
-  color: black;
 }
 
 .asesoria__contenido--titulo {
   font-size: 30px;
-  text-align: center;
+  text-align: map-get($estilos, alineacion);
   font-weight: 800;
+  color: $primary-color;
 }
 
 .asesoria__contenido--descripcion {
   font-size: 15px;
+  color: $secondary-color;
 }
 
 .btn__contacto {
-  font-size: 15px;
-  font-weight: 900;
+  @extend .boton;
+  background-color: rgb(236, 232, 9);
   transition: all ease-out 0.2s;
-}
 
-.btn__contacto:hover {
-  background-color: #000000;
-  color: #fff;
-  transform: scale(1.1);
+  &:hover {
+    background-color: #000000;
+    color: #fff;
+    transform: map-get($estilos, escala);
+  }
 }
 
 /*SECCION GUIA*/
@@ -84,26 +84,21 @@
   grid-area: guia;
   align-items: center;
   background: linear-gradient(0deg, rgba(0, 0, 0, .2), rgb(0, 0, 0, 0.01));
-  min-height: 50vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
 }
 
 .text-shadow {
-  text-shadow: 0 3px 9px rgba(0, 0, 0, 0.6);
+  text-shadow: $text-shadow;
 }
 
 .card-border {
-  border: solid 10px #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all ease-out 0.2s;
-}
+  @extend .card-border;
+  box-shadow: $box-shadow;
+  transition: map-get($estilos, tTransicion);
 
-.card-border:hover {
-  transform: scale(1.05);
+  &:hover {
+    transform: map-get($estilos, escala);
+  }
 }
 
 .imagen__guia {
@@ -123,7 +118,7 @@
   height: 300px;
 }
 
-/*MEDIAQERY*/
+/*MEDIAQUERY*/
 @media (min-width: 480px) {
   .asesoria img {
     width: 350px;
@@ -132,11 +127,8 @@
 
 @media (min-width: 768px) {
   .asesoria {
-    display: flex;
-    flex-direction: row;
+    @include caja-flex(row, center, center);
     margin: 30px 20px;
-    align-items: center;
-    justify-content: center;
   }
 
   .asesoria img {
@@ -159,11 +151,11 @@
 
 @media (min-width: 1024px) {
   .bienvenida__titulo {
-    font-size: 30PX;
+    font-size: 40px !important;
   }
 
   .bienvenida__parrafo {
-    font-size: 20px;
+    font-size: 20px !important;
   }
 
   .asesoria__contenido--titulo {

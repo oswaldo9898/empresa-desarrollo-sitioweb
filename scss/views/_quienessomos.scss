@@ -1,3 +1,8 @@
+@import './../utilities/variables';
+@import './../components/button';
+@import './../utilities/mixins';
+@import './../utilities/map';
+
 /*QUIENES SOMOS*/
 #grid-quienessomos {
   display: grid;
@@ -16,10 +21,7 @@
 .nosotros__encabezado {
   grid-area: titulo;
   background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/nosotros.jpg");
-  min-height: 50vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  @include backgroud-imagen(50vh, cover, center);
 }
 
 .Servicios__encabezado-titulo {
@@ -29,8 +31,7 @@
 
 .quienessomos {
   grid-area: quienessomos;
-  display: flex;
-  flex-direction: column-reverse;
+  @include caja-flex(column-reverse, none, none);
   margin: 20px 10px;
 }
 
@@ -42,10 +43,12 @@
 .quienessomos__contenido h1 {
   font-weight: 800;
   font-size: 23px;
+  color: $primary-color;
 }
 
 .quienessomos__contenido p {
   font-size: 15px;
+  color: $secondary-color;
 }
 
 .quienessomos__imagen {
@@ -78,11 +81,11 @@
 
 .imagen__tecnologia {
   cursor: pointer;
-  transition: all ease-out 0.2s;
+  transition: map-get($estilos, tTransicion);
 }
 
 .imagen__tecnologia:hover {
-  transform: scale(1.1);
+  transform: map-get($estilos, escala);
 }
 
 /* SECCION PORQUE ELEGIRNOS*/
@@ -90,23 +93,28 @@
   grid-area: porque_elegirnos;
 }
 
-.text-card h5,
-.text-card p {
+.text-card {
   font-size: 15px;
+
+  h5 {
+    color: $primary-color;
+  }
+
+  p {
+    color: $secondary-color;
+  }
 }
+
+
 
 /* SECCION UBICACION*/
 .ubicacion {
   grid-area: ubicacion;
-  color: black;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 500;
   background-color: rgb(39, 61, 51);
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  @include caja-flex(column, center, none);
   color: white;
-  align-items: center;
 }
 
 .ubicacion__contenido {
@@ -116,21 +124,22 @@
 
 .ubicacion__contenido--titulo {
   font-size: 25px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .ubicacion__contenido--direccion {
   font-size: 12px;
+  margin: 0 !important;
 }
 
 .ubicacion__contenido--vermapa {
   margin: 20px 0;
-  font-size: 15px;
 }
 
 .ubicacion__contenido--vermapa a {
+  @extend .boton;
   border: white solid 1px;
-  padding: 5px;
+  padding: 8px 15px;
   text-decoration: none;
   color: white;
 }
@@ -151,7 +160,7 @@
   .quienessomos {
     flex-direction: row;
     margin: 20px 10px;
-    align-items: center;
+    align-items: map-get($estilos, alineacion);
   }
 
   .tecnologia__nombre {

@@ -1,3 +1,5 @@
+@import './../utilities/mixins';
+
 /*CONTACTO*/
 #grid-contacto {
   display: grid;
@@ -19,9 +21,7 @@
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include caja-flex(column, center, none);
 }
 
 .logo {
@@ -56,8 +56,7 @@
 }
 
 .form_contacto form {
-  display: flex;
-  flex-direction: column;
+  @include caja-flex(column, none, none);
 }
 
 .form_contacto form p {

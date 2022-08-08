@@ -1,3 +1,8 @@
+@import './../utilities/variables';
+@import './../components/card';
+@import './../utilities/mixins';
+@import './../utilities/map';
+
 #grid-servicios {
   display: grid;
   font-family: 'Open Sans', sans-serif;
@@ -14,42 +19,38 @@
 .servicios__encabezado {
   grid-area: titulo;
   background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/nuestros-servicios-fondo.jpg");
-  min-height: 50vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  @include backgroud-imagen(50vh, cover, center);
 }
 
 .card-border-servicio {
-  border: solid 10px #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all ease-out 0.3s;
+  @extend .card-border;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    transform: map-get($estilos, escala);
+    background-color: rgba(10, 8, 74, 0.645);
+    color: #fff;
+  }
 }
 
-.card-border-servicio:hover {
-  transform: scale(1.05);
-  background-color: rgba(10, 8, 74, 0.645);
-  color: #fff;
-}
 
 /*SERVICIOS APP WEB*/
 #servicios__app__web {
   grid-area: servicios__app__web;
-  color: black;
-  margin: 0px 20px 10px 0px;
+  color: $primary-color;
+  margin: 10px 20px 10px 20px;
 }
 
 /*SERVICIOS POSICIONAMIENTO*/
 #servicios__posicionamiento {
   grid-area: servicios__posicionamiento;
-  color: black;
   margin: 10px 20px 10px 20px;
 }
 
 .titulo__texto-servicio {
   font-size: 22px;
   font-weight: 900;
+  color: $primary-color;
 }
 
 /*MEDIA QUERY*/

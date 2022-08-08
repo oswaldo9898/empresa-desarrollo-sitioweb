@@ -1,3 +1,6 @@
+@import './../utilities/mixins';
+@import './../utilities/map';
+
 /*PREGUNTAS*/
 #grid-dudas {
   display: grid;
@@ -14,10 +17,7 @@
 .dudas__encabezado {
   grid-area: titulo;
   background-image: linear-gradient(0deg, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.5)), url("./../assets/images/dudas-cabecera.jpg");
-  min-height: 50vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  @include backgroud-imagen(50vh, cover, center);
 }
 
 .dudas {
@@ -27,7 +27,7 @@
 /*MEDIA QUERY*/
 @media (min-width: 480px) {
   .imagen__dudas {
-    text-align: center;
+    text-align: map-get($estilos, alineacion);
   }
 
   .imagen__dudas img {

@@ -1,0 +1,13 @@
+@mixin backgroud-imagen($altura, $tamano, $posicion) {
+    min-height: $altura;
+    background-size: $tamano;
+    background-position: $posicion;
+    background-repeat: no-repeat;
+}
+
+@mixin caja-flex($direccion, $alineacion, $justificado) {
+    display: flex;
+    flex-direction: $direccion;
+    align-items: $alineacion;
+    justify-content: $justificado;
+}
