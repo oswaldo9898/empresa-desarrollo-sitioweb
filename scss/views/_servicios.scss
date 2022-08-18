@@ -23,22 +23,29 @@
 }
 
 .card-border-servicio {
-  @extend .card-border;
-  box-shadow: $box-shadow;
+  @extend .card-border-servicio;
+  background-color: rgb(206, 203, 203);
+  box-shadow: 1px 2px 0px #393d3f, 2px 3px 0px #393d3f, 3px 4px 0px #393d3f,
+              4px 5px 0px #393d3f;
 
   &:hover {
-    transform: map-get($estilos, escala);
-    background-color: rgba(10, 8, 74, 0.645);
+    background-color: #9ca8af;
     color: #fff;
+    box-shadow: 1px 2px 0px #393d3f, 2px 3px 0px #393d3f, 3px 4px 0px #393d3f,
+              4px 5px 0px #393d3f inset;
   }
 }
-
 
 /*SERVICIOS APP WEB*/
 #servicios__app__web {
   grid-area: servicios__app__web;
   color: $primary-color;
   margin: 10px 20px 10px 20px;
+}
+
+.img-servicio {
+  width: 40%;
+  margin: 20px;
 }
 
 /*SERVICIOS POSICIONAMIENTO*/
